@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "3a20858a-f385-4d02-bfb8-55994e7c7955",
+		"name": "Coin Calculator API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/exchange/getPrice/BTC-USD",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"exchange",
+						"getPrice",
+						"BTC-USD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Exchange",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\" : 50,\r\n    \"fiatCurrencyType\": \"USD\",\r\n    \"cryptoCurrencyType\": \"BTC\",\r\n    \"exchangeType\": \"SELL\",\r\n    \"cacheId\": 6324946267630184610\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/exchange/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"exchange",
+						"save"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

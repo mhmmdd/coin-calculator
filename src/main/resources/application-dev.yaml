@@ -1,0 +1,47 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+    tomcat:
+      validation-query: SELECT 1
+      test-on-borrow: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: UTC
+    show-sql: true
+
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+
+external-api:
+  exchange-rates-api:
+    url: https://api.blockchain.com/v3/exchange/
+
+logging:
+  level:
+    com.example.coincalculator: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate: DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+        SQL: DEBUG
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss} %5p %c{1}:%L - %m%n"
